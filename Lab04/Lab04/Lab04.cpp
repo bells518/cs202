@@ -3,16 +3,22 @@
 #include <iostream>
 #include <sstream>
 using std::cout;
+using std::endl;
 #include <fstream>
 #include <string>
 using std::string;
 using std::ostringstream;
-
-
+using std::istringstream;
+using std::ifstream;
 int main()
 {
 	ostringstream count;
-
+	for (int i = 1; i <= 8; ++i)
+	{
+		count << i;
+	}
+	
+	return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
