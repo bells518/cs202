@@ -17,6 +17,11 @@ int main()
 	{
 		count << i;
 	}
+
+	istringstream b(count.str());
+	int c;
+	b >> c;
+	cout << "My Integer is " << c << endl;
 	
 	return 0;
 }
