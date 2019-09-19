@@ -22,7 +22,16 @@ int main()
 	int c;
 	b >> c;
 	cout << "My Integer is " << c << endl;
-	
+	ifstream txt("out.txt");
+	while (true)
+	{
+		int x;
+		txt >> x;
+		if (!txt)
+			if (txt.eof())
+				break;
+		cout << "x is " << x << "\n";
+	}
 	return 0;
 }
 
