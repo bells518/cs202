@@ -10,6 +10,9 @@ using std::string;
 using std::ostringstream;
 using std::istringstream;
 using std::ifstream;
+
+
+//ask about how this should work
 int main()
 {
 	ostringstream count;
@@ -23,15 +26,18 @@ int main()
 	b >> c;
 	cout << "My Integer is " << c << endl;
 	ifstream txt("out.txt");
-	while (true)
+	if (txt.is_open())
+	{
+	
+	while (!txt.eof())
 	{
 		int x;
 		txt >> x;
-		if (!txt)
-			if (txt.eof())
-				break;
+			
+				
 		cout << "x is " << x << "\n";
 	}
+}
 	return 0;
 }
 
