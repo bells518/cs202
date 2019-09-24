@@ -14,9 +14,9 @@ int main()
 
 	int ii;
 	int sum = 0;
-	int d = 0;
-	int av = 0;
-	while (d <= 40)
+	double d = 0;
+	double av = 0;
+	while (true)
 	{
 		//use const char* for writing to the file
 		f.read(reinterpret_cast<char*>(&ii), sizeof(ii));
@@ -25,6 +25,10 @@ int main()
 		cout << ii << endl;
 		sum += ii;
 		d += 1;
+		if(!f)
+		{
+			break;
+		}
 	}
 	av = sum / d;
 	cout << "Sum: " << sum << endl;
