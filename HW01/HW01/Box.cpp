@@ -2,7 +2,8 @@
 #include <iostream>
 using std::cout;
 using std::endl;
-
+#include <ostream>
+using std::ostream;
 
 Box::Box() : height(1), width(1), fill(true)
 {
@@ -86,4 +87,22 @@ int Box::getHeight()
 int Box::getWidth()
 {
 	return width;
+}
+
+bool Box::filled()
+{
+	if (fill)
+	{
+		cout << "Filled" << endl;
+		return true;
+	}
+	else if (!fill)
+	{
+		cout << "Hollow" << endl;
+		return false;
+	}
+}
+void Box::print(ostream&)//need to fix this to print out boxes given
+{
+	
 }

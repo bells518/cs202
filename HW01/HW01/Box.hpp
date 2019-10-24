@@ -1,7 +1,8 @@
 #pragma once
+#include <ostream>
 #ifndef BOX_HPP_
 #define BOX_HPP_
-
+std::ostream;
 class Box
 {
 public:
@@ -14,6 +15,8 @@ public:
 	void setWidth(int w);
 	int getHeight();
 	int getWidth();
+	bool filled();
+	void print( ostream&);
 
 
 
