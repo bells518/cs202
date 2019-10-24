@@ -22,53 +22,6 @@ Box::Box(const Box& d) : height(d.height), width(d.width), fill(d.fill)
 
 }
 
-void Box::printBox()
-{
-	int h = height;
-	int w = width;
-	bool f = fill;
-	if (!f)//if box is hollow
-	{
-
-
-		for (int i = 1; i <= h; i++)//height
-		{
-
-			for (int j = 1; j <= w; j++)//width
-			{
-				if (i == 1 || i == h)//bottom and top of hollowed box
-				{
-					cout << "x";
-				}
-				else if (i != 1 && j != 1 && i != h && j != w )//hollow spaces
-				{
-					cout << " ";
-				}
-				else//sides of hollowed box
-				{
-					cout << "x";
-				}
-
-			}
-			cout << "\n";
-		}
-	}
-	if (f)
-	{
-		for (int i = 1; i <= h; i++)//height
-		{
-
-			for (int j = 1; j <= w; j++)//width
-			{
-				
-					cout << "x";
-
-			}
-			cout << "\n";
-		}
-	}
-}
-
 void Box::setHeight(int h)
 {
 	height = h;
@@ -102,7 +55,49 @@ bool Box::filled()
 		return false;
 	}
 }
-void Box::print(ostream&)//need to fix this to print out boxes given
+void Box::print(ostream& p)//why is everything somehow worse
 {
-	
+	int h = height;
+	int w = width;
+	bool f = fill;
+	if (!f)//if box is hollow
+	{
+
+
+		for (int i = 1; i <= h; i++)//height
+		{
+
+			for (int j = 1; j <= w; j++)//width
+			{
+				if (i == 1 || i == h)//bottom and top of hollowed box
+				{
+					p << "x";
+				}
+				else if (i != 1 && j != 1 && i != h && j != w)//hollow spaces
+				{
+					p << " ";
+				}
+				else//sides of hollowed box
+				{
+					p << "x";
+				}
+
+			}
+			p << "\n";
+		}
+	}
+	if (f)
+	{
+		for (int i = 1; i <= h; i++)//height
+		{
+
+			for (int j = 1; j <= w; j++)//width
+			{
+
+				p << "x";
+
+			}
+			p << "\n";
+		}
+	}
 }
